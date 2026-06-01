@@ -1,0 +1,73 @@
+[
+  {
+    "ContainingType": "OrbiFreight.Analytics.Controllers.RelatoriosController",
+    "Method": "GetDashboardResumo",
+    "RelativePath": "api/Relatorios/dashboard-resumo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "OrbiFreight.Analytics.DTOs.DashboardResumoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "OrbiFreight.Analytics.Controllers.RelatoriosController",
+    "Method": "GetHistoricoAlertas",
+    "RelativePath": "api/Relatorios/historico-alertas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tamanho",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrbiFreight.Analytics.Controllers.RelatoriosController",
+    "Method": "GetPerdasEstimadas",
+    "RelativePath": "api/Relatorios/perdas-estimadas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrbiFreight.Analytics.Controllers.RelatoriosController",
+    "Method": "Ping",
+    "RelativePath": "api/Relatorios/ping",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrbiFreight.Analytics.Controllers.RelatoriosController",
+    "Method": "GetRankingRotas",
+    "RelativePath": "api/Relatorios/ranking-rotas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
