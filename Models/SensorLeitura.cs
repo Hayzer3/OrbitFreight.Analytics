@@ -22,10 +22,10 @@ namespace OrbiFreight.Analytics.Models
         [Column("data_hora_leitura")]
         public DateTime DataHoraLeitura { get; set; }
 
-        // Aqui você faz a ligação com a classe que criamos acima
-        public CoordenadaGPS Coordenadas { get; set; } = new CoordenadaGPS();
+        [Column("latitude")]
+        public double Latitude { get; set; }
 
-        [ForeignKey("CargaId")]
-        public Carga? Carga { get; set; }
+        [Column("longitude")]
+        public double Longitude { get; set; }
     }
 }

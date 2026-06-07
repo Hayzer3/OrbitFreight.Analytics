@@ -21,13 +21,12 @@ namespace OrbiFreight.Analytics.Controllers
         {
             var ranking = await _context.Alertas
                 .Include(a => a.Carga)
-                // A tabela Rota não existe mais, agrupamos direto pelas strings na Carga
+                .Where(a => a.Carga != null) // Evita null reference
                 .GroupBy(a => new { a.Carga.Origem, a.Carga.Destino })
                 .Select(g => new
                 {
-                    Trajeto = $"{g.Key.Origem} -> {g.Key.Destino}",
+                    Trajeto = g.Key.Origem + " -> " + g.Key.Destino,
                     TotalAlertas = g.Count(),
-                    // Adaptado para os níveis definidos no Java
                     AlertasCriticos = g.Count(a => a.Nivel == "CRITICO" || a.Nivel == "ALTO")
                 })
                 .OrderByDescending(r => r.TotalAlertas)
@@ -39,15 +38,6 @@ namespace OrbiFreight.Analytics.Controllers
             return Ok(ranking);
         }
 
-        [HttpGet("ping")]
-        public IActionResult Ping()
-        {
-            return Ok(new
-            {
-                Status = "Sucesso!",
-                Mensagem = "A API .NET e o Postman estão vivos e a comunicar perfeitamente. Só falta o Oracle chegar!"
-            });
-        }
 
         [HttpGet("dashboard-resumo")]
         public async Task<ActionResult<DashboardResumoDto>> GetDashboardResumo()
