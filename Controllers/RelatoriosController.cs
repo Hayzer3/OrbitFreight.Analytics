@@ -21,11 +21,10 @@ namespace OrbiFreight.Analytics.Controllers
         {
             var ranking = await _context.Alertas
                 .Include(a => a.Carga)
-                .Where(a => a.Carga != null) // Evita null reference
                 .GroupBy(a => new { a.Carga.Origem, a.Carga.Destino })
                 .Select(g => new
                 {
-                    Trajeto = g.Key.Origem + " -> " + g.Key.Destino,
+                    Trajeto = $"{g.Key.Origem} -> {g.Key.Destino}",
                     TotalAlertas = g.Count(),
                     AlertasCriticos = g.Count(a => a.Nivel == "CRITICO" || a.Nivel == "ALTO")
                 })
