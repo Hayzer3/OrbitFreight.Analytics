@@ -205,8 +205,8 @@ A API trabalha com dados de cargas em transporte e eventos criticos. Alguns exem
 
 ## Videos de Entrega
 
-- [**Video de demonstracao completa:** link do YouTube a ser inserido.](https://youtu.be/lgvnZS5-yeg)
-- [**Video pitch da solucao:** link do YouTube a ser inserido.](https://www.youtube.com/watch?v=OkM58frbgjE)
+- [**Video de demonstracao completa:** ](https://youtu.be/lgvnZS5-yeg)
+- [**Video pitch da solucao:**](https://www.youtube.com/watch?v=OkM58frbgjE)
 
 ---
 
